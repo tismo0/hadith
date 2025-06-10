@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparaison des Collections de Hadiths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --islamic-green: #01796F;
+            --arabic-blue: #1A3F72;
+            --arabic-red: #8B1A1A;
+        }
+        
+        body {
+            background: url('https://www.transparenttextures.com/patterns/arabesque.png'), 
+                        linear-gradient(135deg, #f8f3e6 0%, #e8dfc8 100%);
+            font-family: 'Traditional Arabic', 'Times New Roman', serif;
+        }
+        
+        .header-title {
+            font-family: 'Traditional Arabic', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
+        }
+        
+        .gold-border {
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .arabic-pattern {
+            background: url('https://www.transparenttextures.com/patterns/morocco-blue.png');
+        }
+        
+        .collection-card {
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--islamic-green);
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .sunni-card {
+            border-top-color: var(--islamic-green);
+        }
+        
+        .shia-card {
+            border-top-color: var(--arabic-red);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--arabic-blue);
+        }
+        
+        .arabic-calligraphy {
+            font-family: 'Traditional Arabic', serif;
+            font-size: 1.5rem;
+            line-height: 2;
+            text-align: right;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen font-sans text-gray-800">
+    <div class="container mx-auto px-4 py-12">
+        <!-- Header -->
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-indigo-900 mb-4">Comparaison des Collections de Hadiths</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Une analyse comparative des principaux recueils de hadiths en Islam</p>
+            <div class="w-24 h-1 bg-indigo-500 mx-auto mt-6 rounded-full"></div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section class="mb-20">
+            <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold text-indigo-800 mb-4">Introduction</h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    Les hadiths sont la deuxième source de la législation islamique après le Coran. Alors que les recueils sunnites comme <span class="font-semibold text-green-600">Sahih al-Bukhari</span> et <span class="font-semibold text-green-600">Sahih Muslim</span> suivent des méthodologies rigoureuses d'authentification, les recueils chiites (Rawafidh) comme <span class="font-semibold text-red-600">Al-Kafi</span> contiennent de nombreux hadiths faibles ou fabriqués, souvent pour soutenir leurs croyances déviantes. Cette étude comparera les critères scientifiques des savants sunnites avec les approches problématiques des chiites.
+                </p>
+                <div class="flex justify-center">
+                    <span class="inline-block px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Étude comparative</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Cards -->
+        <section class="mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Bukhari Card -->
+                <div class="collection-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="bg-indigo-600 py-4 px-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-book-open text-white text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-white">Sahih al-Bukhari</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Sunnite</span>
+                            <span class="ml-auto text-sm text-gray-500">9ème siècle</span>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">7 275 hadiths (avec répétitions)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Critères d'authenticité les plus stricts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Considéré comme le livre le plus authentique après le Coran</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/40" alt="Al-Bukhari" class="w-10 h-10 rounded-full">
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-900">Imam al-Bukhari</p>
+                                    <p class="text-sm text-gray-500">194-256 AH / 810-870 CE</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Muslim Card -->
+                <div class="collection-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="bg-blue-600 py-4 px-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-book-open text-white text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-white">Sahih Muslim</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Sunnite</span>
+                            <span class="ml-auto text-sm text-gray-500">9ème siècle</span>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">7 190 hadiths (avec répétitions)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Organisation thématique plus systématique</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Seconde collection la plus authentique après Bukhari</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/40" alt="Muslim" class="w-10 h-10 rounded-full">
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-900">Imam Muslim</p>
+                                    <p class="text-sm text-gray-500">202-261 AH / 817-875 CE</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Al-Kafi Card -->
+                <div class="collection-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="bg-purple-600 py-4 px-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-book-open text-white text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-white">Al-Kafi</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">Chiite</span>
+                            <span class="ml-auto text-sm text-gray-500">10ème siècle</span>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">16 199 hadiths (toutes catégories)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Mélange de hadiths authentiques et faibles</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Considéré comme le plus important recueil chiite</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/40" alt="Al-Kulayni" class="w-10 h-10 rounded-full">
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-900">Al-Kulayni</p>
+                                    <p class="text-sm text-gray-500">250-329 AH / 864-941 CE</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problems with Shia Hadith Methodology -->
+        <section class="mb-20">
+            <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto gold-border">
+                <h2 class="text-2xl font-bold text-red-800 mb-6 arabic-calligraphy">Problèmes majeurs des hadiths chiites</h2>
+                
+                <div class="mb-8 bg-red-50 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-red-800 mb-3">1. Transmission par des menteurs connus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Les chiites acceptent des hadiths transmis par des individus que les savants sunnites (et même certains savants chiites) considèrent comme des menteurs notoires. Par exemple, Jabir al-Ju'fi, une source majeure d'Al-Kafi, était connu pour fabriquer des hadiths.
+                    </p>
+                </div>
+                
+                <div class="mb-8 bg-red-50 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-red-800 mb-3">2. Contradictions avec le Coran</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Alors que les savants sunnites rejettent tout hadith contredisant le Coran, les chiites acceptent des hadiths comme celui affirmant que le Coran aurait été altéré - une croyance clairement hérétique.
+                    </p>
+                </div>
+                
+                <div class="bg-red-50 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-red-800 mb-3">3. Fabrication pour soutenir des croyances</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        De nombreux hadiths chiites ont été clairement fabriqués pour soutenir des doctrines comme l'imamat, la dissimulation (taqiyya) ou la malédiction des compagnons - des concepts qui n'existaient pas à l'époque du Prophète (ﷺ).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Authentication Criteria -->
+        <section class="mb-20">
+            <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold text-indigo-800 mb-6">Critères d'Authentification</h2>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-gray-700">
+                        <thead class="bg-gray-100 text-gray-800">
+                            <tr>
+                                <th class="px-4 py-3 font-semibold">Critère</th>
+                                <th class="px-4 py-3 font-semibold text-center">Bukhari</th>
+                                <th class="px-4 py-3 font-semibold text-center">Muslim</th>
+                                <th class="px-4 py-3 font-semibold text-center">Al-Kafi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Chaîne de transmission ininterrompue</td>
+                                <td class="px-4 py-3 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                <td class="px-4 py-3 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                <td class="px-4 py-3 text-center text-gray-400">Variable</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Fiabilité des transmetteurs</td>
+                                <td class="px-4 py-3 text-center"><i class="fas fa-check text-green-500"></i> Exigeante</td>
+                                <td class="px-4 py-3 text-center"><i class="fas fa-check text-green-500"></i> Moins stricte</td>
+                                <td class="px-4 py-3 text-center">Accepte certains transmetteurs chiites jugés faibles</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Contradiction avec le Coran</td>
+                                <td class="px-4 py-3 text-center">Rejeté</td>
+                                <td class="px-4 py-3 text-center">Rejeté</td>
+                                <td class="px-4 py-3 text-center">Certains hadiths contradictoires acceptés</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-medium">Méthode de compilation</td>
+                                <td class="px-4 py-3 text-center">16 ans de recherche</td>
+                                <td class="px-4 py-3 text-center">15 ans de recherche</td>
+                                <td class="px-4 py-3 text-center">20 ans de recherche</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-8 bg-indigo-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold text-indigo-800 mb-3">Points clés à retenir :</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-indigo-500 mt-2 mr-3"></i>
+                            <span>Bukhari et Muslim n'ont inclus que les hadiths qu'ils jugeaient authentiques (sahih), tandis qu'Al-Kafi contient des hadiths de différentes catégories d'authenticité.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-indigo-500 mt-2 mr-3"></i>
+                            <span>Les collections sunnites (Bukhari, Muslim) ont des chaînes de transmission vérifiables et critiquées par des générations de savants.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-indigo-500 mt-2 mr-3"></i>
+                            <span>Al-Kafi a été compilé pendant la "petite occultation" chiite et certains de ses hadiths sont considérés comme faibles, même par les savants chiites.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Context -->
+        <section class="mb-20">
+            <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold text-indigo-800 mb-6">Contexte Historique</h2>
+                
+                <div class="relative">
+                    <!-- Timeline -->
+                    <div class="border-l-2 border-indigo-200 pl-8 space-y-12 pb-8 relative">
+                        <!-- Bukhari Timeline Item -->
+                        <div class="timeline-item relative">
+                            <div class="flex flex-col md:flex-row items-start md:items-center mb-4">
+                                <h3 class="text-xl font-bold text-indigo-700">Sahih al-Bukhari</h3>
+                                <span class="md:ml-auto bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">810-870 CE</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                Compilé dans un contexte de consolidation des sciences du hadith chez les sunnites. L'imam al-Bukhari a voyagé pendant 16 ans à travers le monde musulman pour collecter et vérifier les hadiths. Son ouvrage a été immédiatement reconnu comme une référence majeure.
+                            </p>
+                        </div>
+                        
+                        <!-- Muslim Timeline Item -->
+                        <div class="timeline-item relative">
+                            <div class="flex flex-col md:flex-row items-start md:items-center mb-4">
+                                <h3 class="text-xl font-bold text-blue-700">Sahih Muslim</h3>
+                                <span class="md:ml-auto bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">817-875 CE</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                Compilé peu après Bukhari par son élève, l'imam Muslim. Il a bénéficié des travaux préliminaires de Bukhari mais a adopté une approche légèrement différente dans l'organisation des hadiths. Son recueil a également été immédiatement accepté par la communauté savante sunnite.
+                            </p>
+                        </div>
+                        
+                        <!-- Al-Kafi Timeline Item -->
+                        <div class="timeline-item relative">
+                            <div class="flex flex-col md:flex-row items-start md:items-center mb-4">
+                                <h3 class="text-xl font-bold text-purple-700">Al-Kafi</h3>
+                                <span class="md:ml-auto bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">864-941 CE</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                Compilé pendant la "petite occultation" des imams chiites, une période de crise pour la communauté chiite. Al-Kulayni a rassemblé des hadiths de diverses sources, certains remontant aux imams chiites. Contrairement aux recueils sunnites, Al-Kafi n'a pas bénéficié du même consensus immédiat au sein de la communauté chiite.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-blue-50 rounded-lg p-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-history text-blue-500 text-2xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-lg font-medium text-blue-800">Influence historique</h3>
+                            <p class="mt-2 text-gray-700">
+                                Alors que Bukhari et Muslim ont été largement acceptés par les quatre écoles sunnites et ont influencé directement le développement du fiqh sunnite, Al-Kafi a eu une réception plus nuancée au sein du chiisme. Certains savants chiites ultérieurs comme Al-Majlisi ont travaillé à classer les hadiths d'Al-Kafi selon leur authenticité.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold text-indigo-800 mb-4">Conclusion</h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    Les recueils sunnites comme Bukhari et Muslim représentent le summum de la préservation des paroles authentiques du Prophète (ﷺ), avec des méthodologies scientifiques rigoureuses développées par des générations de savants. En revanche, les hadiths chiites sont entachés de problèmes majeurs : transmissions par des menteurs, contradictions avec le Coran, et fabrication pour soutenir des croyances déviantes.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    Cette analyse démontre clairement que la voie sunnite est la seule qui préserve fidèlement l'héritage prophétique, tandis que les hadiths chiites sont largement inacceptables pour quiconque cherche la vérité authentique de l'Islam.
+                </p>
+                <div class="mt-8 bg-indigo-100 border-l-4 border-indigo-500 p-4">
+                    <p class="text-indigo-800 italic">
+                        "Recherchez la connaissance du hadith, car elle est la connaissance des premiers et des derniers." - Imam al-Bukhari
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600 text-sm mt-16">
+            <div class="mb-6 bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 max-w-2xl mx-auto">
+                <p class="text-gray-800 italic arabic-calligraphy">
+                    "Les hadiths chiites sont comme leur religion - bâtis sur des fondations branlantes et des mensonges manifestes." - Imam Ibn Taymiyyah
+                </p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-gray-500 hover:text-indigo-600">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/ayoubsyfd/" class="text-gray-500 hover:text-indigo-600">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <p>© 2023 Étude des Hadiths. Tous droits réservés.</p>
+        </footer>
+    </div>
+</body>
+</html>
